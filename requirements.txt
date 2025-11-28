@@ -1,0 +1,25 @@
+# SEO Interlinking Web App (Streamlit) - Python 3.12 compatible
+
+streamlit==1.39.0
+
+# Web crawling and parsing
+requests==2.32.3
+beautifulsoup4==4.12.3
+readability-lxml==0.8.1
+langdetect==1.0.9
+chardet==5.2.0
+
+# Data handling and math
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.2
+scipy==1.14.1
+
+# NLP / embeddings
+sentence-transformers==3.0.1
+
+# Utilities
+tqdm==4.66.4
+joblib==1.4.2
+lxml==5.3.0
+urllib3<2
