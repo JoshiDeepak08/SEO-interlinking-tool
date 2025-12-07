@@ -240,6 +240,7 @@ O --> P[Anchor Selection per Target Page]
 P --> Q[Final Suggestions Table<br>(anchor, target, scores, reason)]
 
 Q --> R[Streamlit UI: Table + CSV Download]
+
 ```
 
 ---
