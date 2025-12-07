@@ -212,34 +212,31 @@ Instead of naive raw HTML scraping, content is cleaned to:
 ```mermaid
 flowchart TD
 
-A[User Inputs<br>Domain + Test URL + Settings] --> B[HTTP Session<br>+ Retry Logic]
+A[User Inputs: Domain and Test URL] --> B[HTTP Session with Retry Logic]
 
-B --> C[Crawl Domain<br>Sitemaps + Internal Links]
+B --> C[Crawl Domain: Sitemaps and Internal Links]
 C --> D[Fetch HTML Pages]
 
-D --> E[Readability Extraction<br>Title + H1 + Headings + Meta + Body Text]
-E --> F[Language Filter + Length Filter]
+D --> E[Readability Extraction: Title, Headings, Meta, Text]
+E --> F[Language Filter and Length Filter]
 
-F --> G[Document Corpus<br>(pandas DataFrame)]
+F --> G[Document Corpus Built]
 
-G --> H[TF-IDF / Count Vectorizer]
+G --> H[TF-IDF or Count Vectorizer]
 G --> I[SBERT Embeddings]
 
-H --> J[TF-IDF Matrix X_tfidf]
-I --> K[Embedding Matrix X_emb]
+H --> J[TF-IDF Similarity Scores]
+I --> K[SBERT Similarity Scores]
 
-J --> L[Similarity: TF-IDF cos]
-K --> M[Similarity: SBERT cos]
+J --> L[Hybrid Scoring with ALPHA Weight]
+K --> L
 
-L --> N[Hybrid Scoring using ALPHA]
-M --> N
+L --> M[Keyphrase Extraction from Test URL]
+M --> N[Anchor Phrase Selection]
 
-N --> O[Keyphrase Extraction from Test URL]
-O --> P[Anchor Selection per Target Page]
+N --> O[Final Suggestions Table]
 
-P --> Q[Final Suggestions Table<br>(anchor, target, scores, reason)]
-
-Q --> R[Streamlit UI: Table + CSV Download]
+O --> P[Streamlit UI Output with CSV Export]
 
 ```
 
